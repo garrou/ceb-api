@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com._1irda.ceb-api'
-version = '0.0.1-SNAPSHOT'
+version = '1.0.0'
 sourceCompatibility = '18'
 
 repositories {
@@ -21,4 +21,8 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+tasks.named("bootJar") {
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
