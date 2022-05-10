@@ -2,6 +2,8 @@
 
 Compte est bon REST api
 
+## POST
+
 ```json
 {
     "operands": [   

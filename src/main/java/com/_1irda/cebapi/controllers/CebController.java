@@ -12,6 +12,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping(path = "api/v1/ceb")
 public class CebController {
 
@@ -20,6 +21,11 @@ public class CebController {
     @Autowired
     public CebController(CebService cebService) {
         this.cebService = cebService;
+    }
+
+    @GetMapping
+    public  ResponseEntity<String> get() {
+        return ResponseEntity.ok("https://github.com/1-irdA/ceb-api#ceb-api");
     }
 
     @PostMapping
