@@ -1,16 +1,15 @@
 package com._1irda.cebapi.controllers;
 
 import com._1irda.cebapi.dto.SolutionDto;
-import com._1irda.cebapi.models.Objective;
+import com._1irda.cebapi.models.Response;
+import com._1irda.cebapi.models.Request;
 import com._1irda.cebapi.services.CebService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping(path = "api/v1/ceb")
@@ -24,7 +23,10 @@ public class CebController {
     }
 
     @PostMapping
-    public ResponseEntity<Map<String, List<SolutionDto>>> postOperandsAndGoal(@Valid @RequestBody Objective objective) {
-        return ResponseEntity.ok(Collections.singletonMap("solutions", cebService.computeSolutions(objective)));
+    public ResponseEntity<Response> postOperandsAndGoal(@Valid @RequestBody Request request) {
+        double start = System.currentTimeMillis();
+        List<SolutionDto> solutions = cebService.computeSolutions(request);
+        double end = (System.currentTimeMillis() - start) / 1000.0;
+        return ResponseEntity.ok(new Response(end, solutions.size(), solutions));
     }
 }

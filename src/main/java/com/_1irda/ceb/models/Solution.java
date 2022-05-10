@@ -25,4 +25,27 @@ public class Solution implements Comparable<Solution> {
     public int compareTo(Solution o) {
         return operations.length - o.operations.length;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+        if (!(o instanceof Solution toCompare)) {
+            return false;
+        }
+        ComputedOperand[] opsToCheck = toCompare.getOperations();
+
+        if (operations.length == opsToCheck.length) {
+            int same = 0;
+
+            for (int i = 0; i < operations.length; i++) {
+                if (Arrays.asList(operations).contains(opsToCheck[i])) {
+                    same++;
+                }
+            }
+            return same == operations.length;
+        }
+        return false;
+    }
 }

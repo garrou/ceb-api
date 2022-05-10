@@ -20,16 +20,20 @@ public class ComputedOperand {
 
     public ComputedOperand compute() {
         switch (operator) {
-            case ADDITION -> result = new Operand(left.getValue() + right.getValue());
-            case SUBTRACTION -> result = new Operand(left.getValue() - right.getValue());
+            case ADDITION -> result = new Operand(left.value() + right.value());
+            case SUBTRACTION -> {
+                if (left.value() > right.value()) {
+                    result = new Operand(left.value() - right.value());
+                }
+            }
             case MULTIPLICATION -> {
                 if (isCorrectMultiplication()) {
-                    result = new Operand(left.getValue() * right.getValue());
+                    result = new Operand(left.value() * right.value());
                 }
             }
             case DIVISION -> {
                 if (isCorrectDivision()) {
-                    result = new Operand(left.getValue() / right.getValue());
+                    result = new Operand(left.value() / right.value());
                 }
             }
         }
@@ -37,11 +41,11 @@ public class ComputedOperand {
     }
 
     private boolean isCorrectMultiplication() {
-        return left.getValue() != 1 && right.getValue() != 1;
+        return left.value() != 1 && right.value() != 1;
     }
 
     private boolean isCorrectDivision() {
-        return right.getValue() != 0 && right.getValue() != 1 && left.getValue() % right.getValue() == 0;
+        return right.value() != 0 && right.value() != 1 && left.value() % right.value() == 0;
     }
 
     public Operand getResult() {
@@ -50,13 +54,13 @@ public class ComputedOperand {
 
     @Override
     public String toString() {
-        return left.getValue()
+        return left.value()
                 + " "
                 + operator.getSymbol()
                 + " "
-                + right.getValue()
+                + right.value()
                 + " = "
-                + result.getValue();
+                + result.value();
     }
 
     @Override
@@ -68,10 +72,10 @@ public class ComputedOperand {
             return false;
         }
         return operator == toCompare.operator
-                && result.getValue() == toCompare.result.getValue()
-                && (left.getValue() == toCompare.left.getValue()
-                    && right.getValue() == toCompare.right.getValue())
-                || (left.getValue() == toCompare.right.getValue()
-                    && right.getValue() == toCompare.left.getValue());
+                && result.value() == toCompare.result.value()
+                && (left.value() == toCompare.left.value()
+                    && right.value() == toCompare.right.value())
+                || (left.value() == toCompare.right.value()
+                    && right.value() == toCompare.left.value());
     }
 }

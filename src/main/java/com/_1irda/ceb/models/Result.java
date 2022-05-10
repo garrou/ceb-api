@@ -19,21 +19,8 @@ public class Result {
 
     private boolean isUnique(Solution toCheck) {
         for (Solution solution : solutions) {
-
-            ComputedOperand[] sol = solution.getOperations();
-            ComputedOperand[] solToCheck = toCheck.getOperations();
-
-            if (sol.length == solToCheck.length) {
-                int same = 0;
-
-                for (int i = 0; i < sol.length; i++) {
-                    if (sol[i].equals(solToCheck[i])) {
-                        same++;
-                    }
-                }
-                if (same == sol.length) {
-                    return false;
-                }
+            if (solution.equals(toCheck)) {
+                return false;
             }
         }
         return true;
@@ -41,6 +28,5 @@ public class Result {
 
     public List<Solution> getSolutions() {
         return solutions;
-
     }
 }

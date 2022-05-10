@@ -30,7 +30,7 @@ public class Solver {
                         if (newOpe.getResult() != null) {
                             operations[depth] = newOpe;
 
-                            if (newOpe.getResult().getValue() == target) {
+                            if (newOpe.getResult().value() == target) {
                                 result.add(new Solution(Arrays.copyOfRange(operations, 0, depth + 1)));
                             } else {
                                 ArrayList<Operand> newOps = new ArrayList<>(ops);
