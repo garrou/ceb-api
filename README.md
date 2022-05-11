@@ -2,13 +2,21 @@
 
 Compte est bon REST api
 
-## POST
+## [Try it](https://ceb-ui.herokuapp.com)
 
-```json
-{
-    "operands": [   
-        4, 25, 10, 3, 6, 2  
-    ],
-    "goal": 877
-}
+## Example
+
+```js
+const request = {
+    operands: [78, 7, 6, 5, 2, 3],
+    goal: 435
+};
+const response = await fetch('https://ceb-api.herokuapp.com/api/v1/ceb', {
+    headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+    },
+    method: 'POST',
+    body: JSON.stringify(request)
+});
 ```

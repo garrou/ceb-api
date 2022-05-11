@@ -30,6 +30,9 @@ public class CebController {
 
     @PostMapping
     public ResponseEntity<Response> postOperandsAndGoal(@Valid @RequestBody Request request) {
+        if (!request.isValid()) {
+            return ResponseEntity.badRequest().body(new Response(0, 0, null));
+        }
         double start = System.currentTimeMillis();
         List<SolutionDto> solutions = cebService.computeSolutions(request);
         double end = (System.currentTimeMillis() - start) / 1000.0;
