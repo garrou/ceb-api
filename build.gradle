@@ -6,7 +6,6 @@ plugins {
 
 group = 'com._1irda.ceb-api'
 version = '1.0.0'
-sourceCompatibility = '18'
 
 repositories {
 	mavenCentral()
@@ -20,7 +19,7 @@ dependencies {
 }
 
 tasks.named('test') {
-	useJUnitPlatform()
+	// useJUnitPlatform()
 }
 
 tasks.named("bootJar") {

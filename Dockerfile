@@ -2,7 +2,7 @@ FROM openjdk:18-jdk-alpine
 
 WORKDIR /app
 
-COPY ./ceb-api.jar ./ceb-api.jar
+COPY ./build/libs/*.jar ./ceb-api.jar
 
 EXPOSE 8080
 
