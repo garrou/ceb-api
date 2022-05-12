@@ -5,7 +5,10 @@ Compte est bon REST api
 ## POST
 
 ```powershell
-Invoke-WebRequest -UseBasicParsing http://localhost:8080/api/v1/ceb -ContentType "application/json" -Method POST -Body '{ "operands": [25,6,6,5,2,3], "goal":764}'
+Invoke-WebRequest -UseBasicParsing "http://localhost:8080/api/v1/ceb" `
+                    -ContentType "application/json" `
+                    -Method POST `
+                    -Body '{ "operands": [25,6,6,5,2,3], "goal":764 }'
 ```
 
 ```json
