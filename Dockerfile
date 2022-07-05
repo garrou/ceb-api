@@ -4,7 +4,7 @@ COPY . /src
 
 WORKDIR /src
 
-RUN gradle build --no-daemon
+RUN gradle build
 
 FROM openjdk:18-jdk-alpine
 

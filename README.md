@@ -4,6 +4,8 @@ Compte est bon REST api
 
 ## Docker
 
+[Docker Hub](https://hub.docker.com/repository/docker/garrou/ceb-api)
+
 ```sh
 docker build -t ceb-api .
 docker run -p 8080:8080 --name ceb-api ceb-api 
@@ -18,18 +20,11 @@ Invoke-WebRequest -UseBasicParsing "http://localhost:8080/api/v1/ceb" `
                     -Body '{ "operands": [25,6,6,5,2,3], "goal":764 }'
 ```
 
-```json
-{
-  "operands": [25, 6, 6, 5, 2, 3],
-  "goal": 764
-}
-```
-
 ## Response
 
 ```json
 {
-  "timeInSecs": 4.129,
+  "timeInSecs": 1.329,
   "nbSolutions": 6,
   "solutions": [
     {
