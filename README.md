@@ -2,6 +2,13 @@
 
 Compte est bon REST api
 
+## Docker
+
+```sh
+docker build -t ceb-api .
+docker run -p 8080:8080 --name ceb-api ceb-api 
+```
+
 ## POST
 
 ```powershell
