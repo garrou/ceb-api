@@ -25,7 +25,7 @@ public class CebController {
 
     @GetMapping
     public  ResponseEntity<String> get() {
-        return ResponseEntity.ok("https://github.com/1-irdA/ceb-api#ceb-api");
+        return ResponseEntity.ok("https://github.com/garrou/ceb-api#ceb-api");
     }
 
     @PostMapping
