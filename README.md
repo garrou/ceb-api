@@ -4,7 +4,7 @@ Compte est bon REST api
 
 ## Docker
 
-[Docker Hub](https://hub.docker.com/repository/docker/garrou/ceb-api)
+[Docker Hub](https://hub.docker.com/r/garrou/ceb-api)
 
 ```sh
 docker build -t ceb-api .
