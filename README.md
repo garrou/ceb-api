@@ -12,12 +12,23 @@ docker tag ceb-api garrou/ceb-api
 docker push garrou/ceb-api
 ```
 
-### Pull 
+### Pull
+
+```sh
+docker pull garrou/ceb-api
+```
+
+### Build 
 
 [Docker Hub](https://hub.docker.com/r/garrou/ceb-api)
 
 ```sh
 docker build -t ceb-api .
+```
+
+### Run
+
+```sh
 docker run -p 8080:8080 --name ceb-api ceb-api 
 ```
 
