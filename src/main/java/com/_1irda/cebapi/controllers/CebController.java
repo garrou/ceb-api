@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
-@RequestMapping(path = "api/v1/ceb")
+@RequestMapping(path = "api/compute")
 public class CebController {
 
     private final CebService cebService;
@@ -25,7 +25,7 @@ public class CebController {
 
     @GetMapping
     public  ResponseEntity<String> get() {
-        return ResponseEntity.ok("https://github.com/garrou/ceb-api#ceb-api");
+        return ResponseEntity.ok("https://github.com/garrou/ceb-api");
     }
 
     @PostMapping
