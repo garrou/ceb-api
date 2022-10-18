@@ -10,7 +10,7 @@ FROM openjdk:18-jdk-alpine
 
 WORKDIR /app
 
-COPY --from=build /src/build/libs/*.jar /app/ceb-api.jar
+COPY --from=build /src/build/libs/ceb-api-1.0.0.jar /app/ceb-api.jar
 
 EXPOSE 8080
 

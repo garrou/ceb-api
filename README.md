@@ -4,6 +4,16 @@ Compte est bon REST api
 
 ## Docker
 
+### Push
+
+```sh
+docker build -t ceb-api .
+docker tag ceb-api garrou/ceb-api
+docker push garrou/ceb-api
+```
+
+### Pull 
+
 [Docker Hub](https://hub.docker.com/r/garrou/ceb-api)
 
 ```sh
@@ -14,7 +24,7 @@ docker run -p 8080:8080 --name ceb-api ceb-api
 ## POST
 
 ```powershell
-Invoke-WebRequest -UseBasicParsing "http://localhost:8080/api/v1/ceb" `
+Invoke-WebRequest -UseBasicParsing "http://localhost:8080/api/compute" `
                     -ContentType "application/json" `
                     -Method POST `
                     -Body '{ "operands": [25,6,6,5,2,3], "goal":764 }'
