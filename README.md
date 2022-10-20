@@ -4,14 +4,6 @@ Compte est bon REST api
 
 ## Docker
 
-### Push
-
-```sh
-docker build -t ceb-api .
-docker tag ceb-api garrou/ceb-api
-docker push garrou/ceb-api
-```
-
 ### Pull & Run
 
 ```sh
