@@ -22,7 +22,7 @@ public class ComputedOperand {
         switch (operator) {
             case ADDITION -> result = new Operand(left.value() + right.value());
             case SUBTRACTION -> {
-                if (left.value() > right.value()) {
+                if (isCorrectSubtraction()) {
                     result = new Operand(left.value() - right.value());
                 }
             }
@@ -38,6 +38,10 @@ public class ComputedOperand {
             }
         }
         return this;
+    }
+
+    private boolean isCorrectSubtraction() {
+        return left.value() > right.value();
     }
 
     private boolean isCorrectMultiplication() {
