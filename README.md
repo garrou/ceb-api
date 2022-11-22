@@ -6,6 +6,8 @@ Compte est bon REST api
 
 ### Pull & Run
 
+[Docker Hub](https://hub.docker.com/r/garrou/ceb-api)
+
 ```sh
 docker pull garrou/ceb-api
 docker run -p 8080:8080 --name ceb-api garrou/ceb-api 
@@ -13,9 +15,9 @@ docker run -p 8080:8080 --name ceb-api garrou/ceb-api
 
 ### Build & Run
 
-[Docker Hub](https://hub.docker.com/r/garrou/ceb-api)
-
 ```sh
+git clone https://github.com/garrou/ceb-api
+cd ceb-api
 docker build -t ceb-api .
 docker run -p 8080:8080 --name ceb-api ceb-api 
 ```
