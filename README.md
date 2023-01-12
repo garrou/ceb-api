@@ -10,7 +10,7 @@ Compte est bon REST api
 
 ```sh
 docker pull garrou/ceb-api
-docker run -p 8080:8080 --name ceb-api garrou/ceb-api 
+docker run --name ceb-api --rm -d -p 8080:8080 garrou/ceb-api
 ```
 
 ### Build & Run
@@ -19,7 +19,7 @@ docker run -p 8080:8080 --name ceb-api garrou/ceb-api
 git clone https://github.com/garrou/ceb-api
 cd ceb-api
 docker build -t ceb-api .
-docker run -p 8080:8080 --name --rm -d ceb-api ceb-api 
+docker run --name ceb-api --rm -d -p 8080:8080 ceb-api
 ```
 
 ## POST
